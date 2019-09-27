@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: FEBS-Server-System
+  profiles:
+    active: dev
+  cloud:
+    nacos:
+      config:
+        server-addr: ${nacos.url}:8001
+        group: DEFAULT_GROUP
+        prefix: febs-server-system
+        file-extension: yaml
+        refreshable-dataids:
+      discovery:
+        server-addr: ${nacos.url}:8001
+
+logging:
+  level:
+    com.alibaba.nacos.client: error
